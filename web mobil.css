@@ -1,0 +1,598 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+:root{
+    --color-primary: #1743e3;
+    --color-white: #eaeaea; 
+    --color-dark: #333; 
+    --color-black: #222; 
+}
+.btn{
+    display: inline-block;
+    width: fit-content;
+    padding: 12px 28px;
+    background: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: var(--color-white);
+    letter-spacing: .4px;
+    font-weight: 600;
+    transition: .4s ease;
+    opacity: 0;
+    animation: logoAni 1s ease forwards; 
+    animation-delay: 1.3s;
+}
+.btn:hover{
+    background: transparent;
+    color: var(--color-primary);
+}
+.container{
+    max-width: 1620px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+
+
+/* .......................Start Nav Bar...................... */
+nav{
+    width: 100%; 
+    height: 5rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+}
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-container ul{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.logo h3{
+    font-size: 25px;
+    color: var(--color-black); 
+    opacity: 0;
+    animation: logoAni 1s ease forwards;   
+}
+.nav-link li a{
+    color: var(--color-black);
+    font-size: 17px;
+    transition: .4s ease;
+    display: inline-block;
+    animation: NavliaAni forwards 1s ease;
+    animation-delay: calc(.2s * var(--i));
+    opacity: 0;
+}
+
+.nav-link li a:hover{
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
+}
+.nav-link li .active{
+    color: var(--color-primary);
+}
+.social-link li a{
+    height: 40px;
+    width: 20px; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    transform: rotate(45deg);
+    transition: .4s ease;   
+    animation: socialAni forwards 1s ease;
+    animation-delay: calc(.2s * var(--i));
+    opacity: 0;    
+}
+.social-link li a:hover{
+    border-color: var(--color-white);
+}
+.social-link li a i{
+    transform: rotate(-45deg);
+    font-size: 20px;
+    color: var(--color-white);
+}
+.social-links li a{
+    height: 40px;
+    width: 20px; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    transform: rotate(45deg);
+    transition: .4s ease;   
+    animation: socialAni forwards 1s ease;
+    animation-delay: calc(.2s * var(--i));
+    opacity: 0;    
+}
+.social-links li a:hover{
+    border-color: var(--color-white);
+}
+.social-links li a i{
+    transform: rotate(-45deg);
+    font-size: 20px;
+    color: var(--color-primary);
+}
+/* .......................End Nav Bar...................... */
+
+
+
+
+
+
+
+
+/* .......................Start Header Section...................... */
+header{
+    width: 100;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-left{
+    max-width: 620px;
+    position: relative;
+}
+.header-left h1{
+    font-size: 54px;
+    line-height: 1.2;
+    color: var(--color-black);
+    animation: H1Ani forwards 1s ease;  
+    opacity: 0;    
+    animation-delay: 1s;  
+}
+.header-left h3{
+    font-size: 40px;
+    font-weight: 400;
+    color: var(--color-primary);
+    margin-top: .5rem;
+    animation: H1Ani forwards 1s ease;  
+    opacity: 0;    
+    animation-delay: .8s;  
+}
+.header-left p{
+    margin: 15px 0 30px;
+    line-height: 150%;
+    font-size: 16px;
+    animation: logoAni forwards 1s ease;  
+    opacity: 0;    
+    animation-delay: .6s; 
+}
+.header-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center; 
+    height: 100%; 
+    justify-content: space-between;
+}
+.header-right{
+    position: relative;
+    width: 450px;
+    height: 450px;
+    transform: rotate(45deg);
+    right: -7%;   
+}
+.sq-box{
+    height: 100%;
+    width: 100%;
+    border: 25px solid var(--color-primary);
+    background: var(--color-white);
+    box-shadow: -15px 15px 15px rgba(0, 0, 0, 0.2) ;
+    opacity: 0;
+    animation: zoomOut 1s ease forwards; 
+    animation-delay: 1.3s;
+}
+.sq-box img{
+    position: absolute;
+    transform: rotate(-45deg);
+    max-width: 700px;
+    top: 130px;
+    left: -180px;
+    opacity: 0;
+    animation: carAni forwards 1s ease;
+    animation-delay: 1.6s;
+}
+.sq-box2{
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    background: var(--color-primary);
+    transform: rotate(45deg);
+    top: -26%;
+    right: -26%;
+    z-index: -1;
+    opacity: 0;
+    animation: sqbox2Ani forwards 1s ease;
+    animation-delay: .3s;
+}
+/* .......................End Header Section...................... */
+
+
+
+
+
+/* .......................Footer Start...................... */
+footer  {
+    background-color: var(--color-primary); 
+    color: white;
+    text-align: center;
+    padding: 25px 0; 
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 1rem;
+    position: relative; 
+}
+
+
+/* .......................Footer End...................... */
+
+
+
+
+
+
+/* .......................Bagian About...................... */
+
+
+.container1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1500px;
+    margin: 200px;
+}
+
+.text-content1 {
+    max-width: 45%;
+}
+.text-content1 h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: H1Ani forwards 1s ease; 
+    color: var(--color-primary);
+}
+.text-content1 p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: justify;
+    animation: logoAni forwards 1s ease;  
+    opacity: 0;    
+    animation-delay: .6s; 
+    
+}
+.text-content1 .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.text-content1 .button:hover {
+    background-color: #fff;
+    color: #111;
+}
+.image-container1 {
+    position: relative;
+    max-width: 45%;
+}
+.image-container1 img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.image-container1::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    background-color: #ccc;
+    z-index: -1;
+    border-radius: 5px;
+}
+    
+.container2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1500px;
+    margin: 200px;
+}
+.image-container2 {
+    position: relative;
+    max-width: 45%;
+}
+.image-container2 img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.image-container2::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    background-color: #ccc;
+    z-index: -1;
+    border-radius: 5px;
+}
+.text-content2 {
+    max-width: 50%;
+    margin-left: 20px; /* Memberi jarak antara gambar dan teks */
+}
+.text-content2 h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: H1Ani forwards 1s ease;
+    color: var(--color-primary); 
+}
+.text-content2 p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: justify;
+    animation: logoAni forwards 1s ease;  
+    opacity: 0;    
+    animation-delay: .6s; 
+}
+.lokasi {
+    margin: auto; 
+    text-align: center; 
+    padding: 15vh;
+}
+.lokasi h1{
+    color: var(--color-primary);
+}
+
+.lokasi iframe {
+    width: 100%; 
+    max-width: 170vh; 
+    height: 700px; 
+    border: 0; 
+    display: block; 
+    margin: auto; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* .......................Bagian About...................... */
+
+/* .......................Bagian Produk...................... */
+
+.content3 {
+    text-align: center;
+    margin: 200px 0 40px 0;
+}
+.content3 h2 {
+    color: #1a73e8;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.products3 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px;
+}
+.product-card3 {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    overflow: hidden;
+}
+.product-card3 img {
+    width: 100%;
+    height: auto;
+}
+.product-card3 .details3 {
+    padding: 15px;
+    text-align: left;
+}
+.product-card3 .details3 h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+.product-card3 .details3 h3 span {
+    color: red;
+    font-weight: bold;
+}
+.product-card3 .details3 p {
+    margin: 5px 0;
+    color: #333;
+}
+.product-card3 .details3 .buy-button {
+    display: block;
+    width: calc(100% - 30px);
+    padding: 10px;
+    text-align: center;
+    background-color: #1a73e8;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 10px auto 0;
+    font-weight: bold;
+}
+@media (max-width: 768px) {
+    .products3 {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.w3{
+    footer  {
+        background-color: var(--color-primary); 
+        color: white;
+        text-align: center;
+        padding: 25px 0; 
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        font-size: 1rem;
+        position: relative; 
+    }
+}
+/* .......................Bagian Produk...................... */
+
+
+
+/* .......................Bagian Kontak...................... */
+
+.container3 {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0;
+    flex: 1;
+}
+.contact-form {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.contact-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+.contact-form label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #555;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.contact-form button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* .......................Bagian Kontak...................... */
+
+
+
+
+
+/* .......................Animation Start...................... */
+@keyframes logoAni {
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }    
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }    
+}
+@keyframes NavliaAni {
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }    
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }    
+}
+@keyframes socialAni {
+    0%{
+        transform: translateX(100px) rotate(45deg);
+        opacity: 0;
+    }    
+    100%{
+        transform: translateX(0) rotate(45deg);
+        opacity: 1;
+    }    
+}
+@keyframes H1Ani {
+    0%{
+        transform: translateY(-100px) ;
+        opacity: 0;
+    }    
+    100%{
+        transform: translateY(0) ;
+        opacity: 1;
+    }    
+}
+@keyframes zoomOut {
+    0%{
+        transform:scale(1.1) ;
+        opacity: 0;
+    }    
+    100%{
+        transform: scale(1) ;
+        opacity: 1;
+    }    
+}
+@keyframes carAni {
+    0%{
+        transform: translate(180px, -300px) scale(0) rotate(-45deg);
+        opacity: 0;
+    }    
+    100%{
+        transform: translate(0, 0) scale(1) rotate(-45deg);
+        opacity: 1;
+    }    
+}
+@keyframes sqbox2Ani {
+    0%{
+        right: -40%;
+        opacity: 0;
+    }    
+    100%{
+        right: -26%;
+        opacity: 1;
+    }    
+}
+
+
+/* .......................End Animation...................... */
